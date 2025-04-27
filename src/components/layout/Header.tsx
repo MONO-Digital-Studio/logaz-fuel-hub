@@ -1,19 +1,15 @@
-
 import React from "react";
 import { Bell, User, Search, LogOut } from "lucide-react";
 import Logo from "../Logo";
-
 interface HeaderProps {
   userName?: string;
   companyName?: string;
 }
-
 const Header: React.FC<HeaderProps> = ({
   userName = "Иванов И.И.",
-  companyName = "ООО Транспортные Системы",
+  companyName = "ООО Транспортные Системы"
 }) => {
-  return (
-    <header className="bg-white border-b border-logaz-gray py-3 px-6">
+  return <header className="bg-white border-b border-logaz-gray px-6 py-[15px]">
       <div className="flex items-center justify-between">
         <div className="flex items-center md:hidden">
           <Logo />
@@ -21,15 +17,8 @@ const Header: React.FC<HeaderProps> = ({
 
         <div className="flex-grow max-w-2xl mx-8 hidden md:block">
           <div className="relative">
-            <input
-              type="text"
-              placeholder="Поиск..."
-              className="input-field pl-10"
-            />
-            <Search
-              size={20}
-              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-logaz-gray"
-            />
+            <input type="text" placeholder="Поиск..." className="input-field pl-10" />
+            <Search size={20} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-logaz-gray" />
           </div>
         </div>
 
@@ -55,8 +44,6 @@ const Header: React.FC<HeaderProps> = ({
           </button>
         </div>
       </div>
-    </header>
-  );
+    </header>;
 };
-
 export default Header;

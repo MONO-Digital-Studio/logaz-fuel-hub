@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "../hooks/use-toast";
@@ -16,27 +15,16 @@ const Auth = () => {
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!inn || !password) {
-      toast({
-        title: "Ошибка",
-        description: "Заполните все обязательные поля",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    // Имитация процесса авторизации
+    // During development, skip validation and directly navigate
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      
-      // В прототипе авторизация всегда успешна
       toast({
         title: "Успешная авторизация",
         description: "Добро пожаловать в систему ЛОГАЗ SV",
       });
       navigate("/dashboard");
-    }, 1000);
+    }, 500);
   };
 
   const handleForgotPassword = () => {
@@ -104,8 +92,7 @@ const Auth = () => {
           <div>
             <button
               type="submit"
-              disabled={isLoading}
-              className={`btn-primary w-full ${isLoading ? "opacity-70 cursor-not-allowed" : ""}`}
+              className="btn-primary w-full"
             >
               {isLoading ? "Вход..." : "Войти"}
             </button>

@@ -1,5 +1,7 @@
 import React from "react";
-import { Building2, MapPin, Phone, Mail } from "lucide-react";
+import { Building2, MapPin, Phone, Mail, FileText } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
 const CompanyInfo = () => {
   // Примерные данные компании
   const companyData = {
@@ -128,6 +130,47 @@ const CompanyInfo = () => {
           </div>
         </div>
 
+        <div className="card card-header col-span-full">
+          <div className="flex justify-between items-start mb-4">
+            <h2 className="text-lg font-semibold text-logaz-blue">
+              Электронный документооборот (ЭДО)
+            </h2>
+            <FileText className="text-logaz-blue" size={24} />
+          </div>
+
+          <div className="space-y-4">
+            <p className="text-sm text-logaz-gray">
+              Статус подключения ЭДО
+            </p>
+            <div className="flex items-center space-x-2">
+              <div className="h-3 w-3 rounded-full bg-yellow-400"></div>
+              <p className="font-medium">Ожидает настройки</p>
+            </div>
+            
+            <div className="space-y-2">
+              <p className="text-sm text-logaz-gray">Оператор ЭДО</p>
+              <Button variant="outline" className="w-full justify-start">
+                <FileText className="mr-2 h-4 w-4" />
+                Подключить оператора ЭДО
+              </Button>
+            </div>
+
+            <div className="space-y-2">
+              <p className="text-sm text-logaz-gray">Настройки ЭДО</p>
+              <div className="grid gap-2">
+                <div className="flex justify-between items-center p-3 bg-logaz-light-gray rounded-md">
+                  <p className="text-sm">ID участника</p>
+                  <p className="text-sm font-medium">Не настроено</p>
+                </div>
+                <div className="flex justify-between items-center p-3 bg-logaz-light-gray rounded-md">
+                  <p className="text-sm">Формат документов</p>
+                  <p className="text-sm font-medium">Не настроено</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="card card-header">
           <div className="flex justify-between items-start mb-4">
             <h2 className="text-lg font-semibold text-logaz-blue">
@@ -152,4 +195,5 @@ const CompanyInfo = () => {
       </div>
     </div>;
 };
+
 export default CompanyInfo;

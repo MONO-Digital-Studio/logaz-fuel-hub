@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { Home, CreditCard, FileText, Users, Building2, Bell, HelpCircle, ChevronRight, ChevronLeft, LogOut, List } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -34,6 +35,19 @@ const Sidebar: React.FC = () => {
   const isMobile = useIsMobile();
   const [collapsed, setCollapsed] = useState(true);
   const [mobileOpen, setMobileOpen] = useState(false);
+  
+  // Update document's body style to add padding-left based on sidebar width
+  useEffect(() => {
+    if (!isMobile) {
+      document.body.style.paddingLeft = collapsed ? "76px" : "256px";
+    } else {
+      document.body.style.paddingLeft = "0";
+    }
+    
+    return () => {
+      document.body.style.paddingLeft = "0";
+    };
+  }, [collapsed, isMobile]);
 
   const toggleMobileMenu = () => {
     setMobileOpen(!mobileOpen);
@@ -53,7 +67,7 @@ const Sidebar: React.FC = () => {
 
   const overlay = isMobile && mobileOpen && (
     <div
-      className="fixed inset-0 bg-black bg-opacity-50 z-40"
+      className="fixed inset-0 bg-black bg-opacity-50 z-30"
       onClick={toggleMobileMenu}
     />
   );

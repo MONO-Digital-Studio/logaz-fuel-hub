@@ -15,9 +15,9 @@ const Layout: React.FC = () => {
   return (
     <div className="flex min-h-screen bg-logaz-light-gray">
       <Sidebar />
-      <div className="flex-1 flex flex-col min-w-0">
+      <div className="flex-1 flex flex-col min-w-0 transition-all duration-300">
         <Header />
-        <main className="flex-grow p-6 mt-[72px]">
+        <main className="flex-grow p-6 mt-[72px] transition-all duration-300">
           <Outlet />
         </main>
       </div>

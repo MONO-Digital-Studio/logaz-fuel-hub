@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { CreditCard, Wallet, Droplets, ReceiptText } from "lucide-react";
 import StatCard from "../components/dashboard/StatCard";
@@ -128,24 +129,13 @@ const Dashboard = () => {
         <ChartCard
           title="Структура общего баланса"
           type="bar"
-          data={[
-            { name: "Собственные средства", value: 98300, displayValue: "Рубли" },
-            { name: "Овердрафт", value: 26200, displayValue: "Рубли" }
-          ]}
+          data={balanceData}
           customTooltip={(value) => `${value.toLocaleString()} ₽`}
         />
         <ChartCard
           title="Динамика расходов"
           type="line"
-          data={[
-            { name: "1 Май", value: 10560, displayValue: "Рубли" },
-            { name: "5 Май", value: 13200, displayValue: "Рубли" },
-            { name: "10 Май", value: 8800, displayValue: "Рубли" },
-            { name: "15 Май", value: 19800, displayValue: "Рубли" },
-            { name: "20 Май", value: 12320, displayValue: "Рубли" },
-            { name: "25 Май", value: 15400, displayValue: "Рубли" },
-            { name: "30 Май", value: 18480, displayValue: "Рубли" }
-          ]}
+          data={lineData}
           customTooltip={(value) => `${value.toLocaleString()} ₽`}
         />
       </div>
@@ -154,23 +144,12 @@ const Dashboard = () => {
         <ChartCard
           title="Распределение по видам топлива"
           type="pie"
-          data={[
-            { name: "Метан", value: 45, displayValue: "Рубли" },
-            { name: "Пропан", value: 35, displayValue: "Рубли" },
-            { name: "ДТ", value: 15, displayValue: "Рубли" },
-            { name: "АИ-95", value: 5, displayValue: "Рубли" }
-          ]}
+          data={fuelData}
         />
         <ChartCard
           title="Топ автомобилей по расходам"
           type="bar"
-          data={[
-            { name: "А123АА", value: 14080, displayValue: "Рубли" },
-            { name: "В456ВВ", value: 12320, displayValue: "Рубли" },
-            { name: "С789СС", value: 11000, displayValue: "Рубли" },
-            { name: "Е012ЕЕ", value: 8800, displayValue: "Рубли" },
-            { name: "Н345НН", value: 7920, displayValue: "Рубли" }
-          ]}
+          data={topCarsData}
           customTooltip={(value) => `${value.toLocaleString()} ₽`}
         />
       </div>
@@ -184,3 +163,4 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+

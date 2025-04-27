@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { CreditCard, Wallet, Droplets, ReceiptText } from "lucide-react";
 import StatCard from "../components/dashboard/StatCard";
@@ -132,7 +133,7 @@ const Dashboard = () => {
           customTooltip={(value) => `${value.toLocaleString()} ₽`}
         />
         <ChartCard
-          title="Динамика расхода топлива"
+          title="Динамика расходов"
           type="line"
           data={lineData}
           customTooltip={(value) => `${value.toLocaleString()} ₽`}
@@ -146,7 +147,7 @@ const Dashboard = () => {
           data={fuelData}
         />
         <ChartCard
-          title="Топ-5 автомобилей по расходу топлива"
+          title="Топ автомобилей по расходам"
           type="bar"
           data={topCarsData}
           customTooltip={(value) => `${value.toLocaleString()} ₽`}
@@ -162,3 +163,4 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+

@@ -1,4 +1,3 @@
-
 import React from "react";
 import {
   LineChart,
@@ -14,6 +13,7 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
+  LabelList
 } from "recharts";
 
 interface ChartCardProps {
@@ -64,7 +64,14 @@ const ChartCard: React.FC<ChartCardProps> = ({
               }
             />
             <Legend />
-            <Bar dataKey="value" fill="#3B55A2" />
+            <Bar dataKey="value" fill="#3B55A2">
+              <LabelList 
+                dataKey="displayValue" 
+                position="inside" 
+                fill="white" 
+                fontWeight="bold"
+              />
+            </Bar>
           </BarChart>
         );
       case "pie":

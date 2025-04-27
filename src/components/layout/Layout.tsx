@@ -14,14 +14,10 @@ const Layout: React.FC = () => {
 
   return (
     <div className="flex min-h-screen bg-logaz-light-gray">
-      <div className="fixed inset-y-0 left-0 z-40">
-        <Sidebar />
-      </div>
-      <div className="flex-grow flex flex-col pl-[76px] md:pl-64">
-        <div className="fixed top-0 right-0 left-[76px] md:left-64 z-30">
-          <Header />
-        </div>
-        <main className="flex-grow overflow-y-auto pt-[72px] p-6">
+      <Sidebar />
+      <div className="flex-1 flex flex-col min-w-0">
+        <Header />
+        <main className="flex-grow p-6 mt-[72px]">
           <Outlet />
         </main>
       </div>

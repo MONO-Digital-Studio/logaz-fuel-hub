@@ -13,7 +13,7 @@ const Header: React.FC<HeaderProps> = ({
   companyName = "ООО Транспортные Системы"
 }) => {
   return (
-    <header className="bg-white border-b border-logaz-gray h-[72px] w-full shadow-sm">
+    <header className="fixed top-0 right-0 left-0 bg-white border-b border-logaz-gray h-[72px] z-30 shadow-sm">
       <div className="flex items-center h-full px-6">
         <div className="flex items-center md:hidden">
           <Logo />

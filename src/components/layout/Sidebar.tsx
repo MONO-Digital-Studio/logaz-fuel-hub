@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Home, CreditCard, FileText, Users, Building2, Bell, HelpCircle, ChevronRight, ChevronLeft, LogOut, List } from "lucide-react";
@@ -36,25 +35,22 @@ const Sidebar: React.FC = () => {
   const [collapsed, setCollapsed] = useState(true);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  // Handle mobile menu visibility
   const toggleMobileMenu = () => {
     setMobileOpen(!mobileOpen);
   };
 
-  // Handle desktop sidebar collapse
   const toggleSidebar = () => {
     setCollapsed(!collapsed);
   };
 
   const sidebarClasses = isMobile
-    ? `fixed inset-y-0 left-0 z-50 bg-white border-r border-logaz-gray h-screen w-64 transform transition-transform duration-300 ${
+    ? `fixed inset-y-0 left-0 z-40 bg-white h-screen w-64 transform transition-transform duration-300 ${
         mobileOpen ? "translate-x-0" : "-translate-x-full"
       }`
-    : `bg-white border-r border-logaz-gray h-screen flex flex-col ${
+    : `fixed inset-y-0 left-0 z-40 bg-white border-r border-logaz-gray h-screen ${
         collapsed ? "w-[76px]" : "w-64"
       } transition-all duration-300`;
 
-  // Mobile overlay
   const overlay = isMobile && mobileOpen && (
     <div
       className="fixed inset-0 bg-black bg-opacity-50 z-40"

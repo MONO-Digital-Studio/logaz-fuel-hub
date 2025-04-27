@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Building2, MapPin, Phone, Mail, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -101,6 +102,28 @@ const CompanyInfo = () => {
 
         <div className="card card-header">
           <div className="flex justify-between items-start mb-4">
+            <h2 className="text-lg font-semibold text-logaz-blue">
+              Текущие цены на топливо
+            </h2>
+          </div>
+
+          <div className="space-y-4">
+            {companyData.fuelPrices.map((fuel, index) => <div key={index} className="flex justify-between items-center p-3 bg-logaz-light-gray rounded-md">
+                <div>
+                  <p className="font-medium">{fuel.type}</p>
+                  <p className="text-xs text-logaz-gray">
+                    Цена актуальна на {fuel.date}
+                  </p>
+                </div>
+                <p className="text-lg font-semibold text-logaz-blue">
+                  {fuel.price}
+                </p>
+              </div>)}
+          </div>
+        </div>
+
+        <div className="card card-header">
+          <div className="flex justify-between items-start mb-4">
             <h2 className="text-lg font-semibold text-logaz-blue">Контактная информация</h2>
             <Phone className="text-logaz-blue" size={24} />
           </div>
@@ -168,28 +191,6 @@ const CompanyInfo = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        <div className="card card-header">
-          <div className="flex justify-between items-start mb-4">
-            <h2 className="text-lg font-semibold text-logaz-blue">
-              Текущие цены на топливо
-            </h2>
-          </div>
-
-          <div className="space-y-4">
-            {companyData.fuelPrices.map((fuel, index) => <div key={index} className="flex justify-between items-center p-3 bg-logaz-light-gray rounded-md">
-                <div>
-                  <p className="font-medium">{fuel.type}</p>
-                  <p className="text-xs text-logaz-gray">
-                    Цена актуальна на {fuel.date}
-                  </p>
-                </div>
-                <p className="text-lg font-semibold text-logaz-blue">
-                  {fuel.price}
-                </p>
-              </div>)}
           </div>
         </div>
       </div>

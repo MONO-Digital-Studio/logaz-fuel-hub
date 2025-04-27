@@ -12,6 +12,8 @@ import Reports from "./pages/Reports";
 import CompanyInfo from "./pages/CompanyInfo";
 import Users from "./pages/Users";
 import NotFound from "./pages/NotFound";
+import Notifications from "./pages/Notifications";
+import Support from "./pages/Support";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +32,8 @@ const App = () => (
             <Route path="/reports" element={<Reports />} />
             <Route path="/company" element={<CompanyInfo />} />
             <Route path="/users" element={<Users />} />
+            <Route path="/notifications" element={<Notifications />} />
+            <Route path="/support" element={<Support />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

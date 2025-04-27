@@ -15,14 +15,9 @@ const Auth = () => {
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // During development, skip validation and directly navigate
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      toast({
-        title: "Успешная авторизация",
-        description: "Добро пожаловать в систему ЛОГАЗ SV",
-      });
       navigate("/dashboard");
     }, 500);
   };

@@ -146,9 +146,7 @@ const Reports = () => {
           <div className="text-center py-8">
             <BarChart4 size={64} className="mx-auto mb-4 text-logaz-gray" />
             <h3 className="text-lg font-semibold mb-2">Акты сверки</h3>
-            <p className="text-logaz-gray mb-6">
-              Создайте бухгалтерский отчет за выбранный период, выбрав необходимые фильтры и нажав "Сформировать"
-            </p>
+            <p className="text-logaz-gray mb-6">Создайте отчет по Актам сверки за выбранный период, выбрав необходимые фильтры и нажав &quot;Сформировать&quot;</p>
             <button className="btn-primary">
               Сформировать отчет
             </button>

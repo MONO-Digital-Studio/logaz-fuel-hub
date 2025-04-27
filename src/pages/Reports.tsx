@@ -1,11 +1,21 @@
 import React, { useState } from "react";
 import { Calendar, Download, Printer, Mail, Filter, FileText, BarChart4 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import PeriodFilter from "../components/dashboard/PeriodFilter";
 
 const Reports = () => {
   const [activePeriod, setActivePeriod] = useState("month");
   const [reportType, setReportType] = useState("transactions");
+  const [selectedContract, setSelectedContract] = useState("");
+
+  // Sample contracts data
+  const contracts = [
+    { id: "1", name: "Договор №1234-АЗС" },
+    { id: "2", name: "Договор №5678-АЗС" },
+    { id: "3", name: "Договор №9012-АЗС" },
+  ];
+
   return <div className="space-y-6 animate-fade-in">
       <div className="flex justify-between items-center">
         <h1 className="text-2xl font-bold text-logaz-dark-gray">Бухгалтерия</h1>
@@ -32,6 +42,22 @@ const Reports = () => {
                 <Calendar size={16} className="mr-2" />
                 Выбрать даты
               </button>
+              <div className="flex items-center space-x-2">
+                <Filter size={16} className="text-logaz-blue" />
+                <Select value={selectedContract} onValueChange={setSelectedContract}>
+                  <SelectTrigger className="w-[200px]">
+                    <SelectValue placeholder="Все договоры" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="">Все договоры</SelectItem>
+                    {contracts.map((contract) => (
+                      <SelectItem key={contract.id} value={contract.id}>
+                        {contract.name}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
               <div className="flex items-center space-x-2">
                 <Filter size={16} className="text-logaz-blue" />
                 <select className="input-field text-sm py-1.5">
@@ -130,4 +156,5 @@ const Reports = () => {
       </Tabs>
     </div>;
 };
+
 export default Reports;

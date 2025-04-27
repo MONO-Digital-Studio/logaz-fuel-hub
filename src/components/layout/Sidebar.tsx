@@ -12,6 +12,7 @@ import {
   ChevronRight,
   ChevronLeft,
   LogOut,
+  List,
 } from "lucide-react";
 import Logo from "../Logo";
 
@@ -64,6 +65,18 @@ const Sidebar: React.FC = () => {
           to="/cards"
           icon={<CreditCard size={20} />}
           label="Топливные карты"
+          collapsed={collapsed}
+        />
+        <NavItem
+          to="/payment"
+          icon={<FileText size={20} />}
+          label="Оплата"
+          collapsed={collapsed}
+        />
+        <NavItem
+          to="/transactions"
+          icon={<List size={20} />}
+          label="Транзакции"
           collapsed={collapsed}
         />
         <NavItem

@@ -14,6 +14,8 @@ import Users from "./pages/Users";
 import NotFound from "./pages/NotFound";
 import Notifications from "./pages/Notifications";
 import Support from "./pages/Support";
+import Payment from "./pages/Payment";
+import Transactions from "./pages/Transactions";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +36,8 @@ const App = () => (
             <Route path="/users" element={<Users />} />
             <Route path="/notifications" element={<Notifications />} />
             <Route path="/support" element={<Support />} />
+            <Route path="/payment" element={<Payment />} />
+            <Route path="/transactions" element={<Transactions />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

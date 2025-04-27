@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { CreditCard, Wallet, Droplets, ReceiptText } from "lucide-react";
 import StatCard from "../components/dashboard/StatCard";
@@ -9,7 +8,6 @@ import PeriodFilter from "../components/dashboard/PeriodFilter";
 const Dashboard = () => {
   const [activePeriod, setActivePeriod] = useState("month");
 
-  // Примерные данные для графиков
   const lineData = [
     { name: "1 Май", value: 240 },
     { name: "5 Май", value: 300 },
@@ -35,7 +33,6 @@ const Dashboard = () => {
     { name: "Н345НН", value: 180 },
   ];
 
-  // Примерные данные для транзакций
   const transactions = [
     {
       id: "1",
@@ -83,6 +80,11 @@ const Dashboard = () => {
     },
   ];
 
+  const balanceData = [
+    { name: "Собственные средства", value: 98300 },
+    { name: "Овердрафт", value: 26200 },
+  ];
+
   return (
     <div className="space-y-6 animate-fade-in">
       <div className="flex justify-between items-center">
@@ -95,6 +97,7 @@ const Dashboard = () => {
           title="Общий баланс"
           value="124 500 ₽"
           description="Собственных средств: 98 300 ₽"
+          overdraft="26 200 ₽"
           icon={<Wallet size={24} />}
           color="blue"
         />
@@ -123,18 +126,23 @@ const Dashboard = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <ChartCard
+          title="Структура общего баланса"
+          type="bar"
+          data={balanceData}
+        />
+        <ChartCard
           title="Динамика расхода топлива"
           type="line"
           data={lineData}
         />
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <ChartCard
           title="Распределение по видам топлива"
           type="pie"
           data={fuelData}
         />
-      </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <ChartCard
           title="Топ-5 автомобилей по расходу топлива"
           type="bar"

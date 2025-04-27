@@ -1,22 +1,24 @@
-
 import React, { useState } from "react";
 import { Calendar, Download, Printer, Mail, Filter, FileText, BarChart4 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import PeriodFilter from "../components/dashboard/PeriodFilter";
-
 const Reports = () => {
   const [activePeriod, setActivePeriod] = useState("month");
   const [reportType, setReportType] = useState("transactions");
   const [selectedContract, setSelectedContract] = useState("all");
 
   // Sample contracts data
-  const contracts = [
-    { id: "1", name: "Договор №1234-АЗС" },
-    { id: "2", name: "Договор №5678-АЗС" },
-    { id: "3", name: "Договор №9012-АЗС" },
-  ];
-
+  const contracts = [{
+    id: "1",
+    name: "Договор №1234-АЗС"
+  }, {
+    id: "2",
+    name: "Договор №5678-АЗС"
+  }, {
+    id: "3",
+    name: "Договор №9012-АЗС"
+  }];
   return <div className="space-y-6 animate-fade-in">
       <div className="flex justify-between items-center">
         <h1 className="text-2xl font-bold text-logaz-dark-gray">Бухгалтерия</h1>
@@ -51,11 +53,9 @@ const Reports = () => {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="all">Все договоры</SelectItem>
-                    {contracts.map((contract) => (
-                      <SelectItem key={contract.id} value={contract.id}>
+                    {contracts.map(contract => <SelectItem key={contract.id} value={contract.id}>
                         {contract.name}
-                      </SelectItem>
-                    ))}
+                      </SelectItem>)}
                   </SelectContent>
                 </Select>
               </div>
@@ -145,7 +145,7 @@ const Reports = () => {
         <TabsContent value="accounting" className="p-4">
           <div className="text-center py-8">
             <BarChart4 size={64} className="mx-auto mb-4 text-logaz-gray" />
-            <h3 className="text-lg font-semibold mb-2">Бухгалтерские отчеты</h3>
+            <h3 className="text-lg font-semibold mb-2">Акты сверки</h3>
             <p className="text-logaz-gray mb-6">
               Создайте бухгалтерский отчет за выбранный период, выбрав необходимые фильтры и нажав "Сформировать"
             </p>
@@ -157,5 +157,4 @@ const Reports = () => {
       </Tabs>
     </div>;
 };
-
 export default Reports;

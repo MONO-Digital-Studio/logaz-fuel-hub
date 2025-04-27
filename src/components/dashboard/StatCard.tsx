@@ -33,7 +33,7 @@ const StatCard: React.FC<StatCardProps> = ({
           <p className="text-2xl font-semibold mt-2">{value}</p>
           {description && (
             <p className="text-xs mt-1">
-              <span className="text-logaz-green">{description}</span>
+              <span className="text-logaz-green">Собственные средства: {description}</span>
               {overdraft && (
                 <>
                   <br />

@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Calendar, Download, Printer, Mail, Filter, FileText, BarChart4 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -7,7 +8,7 @@ import PeriodFilter from "../components/dashboard/PeriodFilter";
 const Reports = () => {
   const [activePeriod, setActivePeriod] = useState("month");
   const [reportType, setReportType] = useState("transactions");
-  const [selectedContract, setSelectedContract] = useState("");
+  const [selectedContract, setSelectedContract] = useState("all");
 
   // Sample contracts data
   const contracts = [
@@ -49,7 +50,7 @@ const Reports = () => {
                     <SelectValue placeholder="Все договоры" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">Все договоры</SelectItem>
+                    <SelectItem value="all">Все договоры</SelectItem>
                     {contracts.map((contract) => (
                       <SelectItem key={contract.id} value={contract.id}>
                         {contract.name}

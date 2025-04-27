@@ -13,11 +13,11 @@ const Layout: React.FC = () => {
   }
 
   return (
-    <div className="flex h-screen">
+    <div className="flex min-h-screen bg-logaz-light-gray">
       <Sidebar />
       <div className="flex-grow flex flex-col overflow-hidden">
         <Header />
-        <main className="flex-grow overflow-y-auto bg-logaz-light-gray p-6">
+        <main className="flex-grow overflow-y-auto p-6">
           <Outlet />
         </main>
       </div>

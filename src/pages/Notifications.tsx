@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import {
   MessageSquareText,
   Bell,
-  InfoCircle,
+  Info,
 } from "lucide-react";
 
 interface Notification {
@@ -56,7 +56,7 @@ const getNotificationIcon = (type: Notification["type"]) => {
     case "success":
       return <MessageSquareText className="h-5 w-5 text-logaz-green" />;
     case "info":
-      return <InfoCircle className="h-5 w-5 text-logaz-blue" />;
+      return <Info className="h-5 w-5 text-logaz-blue" />;
   }
 };
 

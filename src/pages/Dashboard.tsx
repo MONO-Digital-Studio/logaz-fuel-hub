@@ -81,8 +81,8 @@ const Dashboard = () => {
   ];
 
   const balanceData = [
-    { name: "Собственные средства", value: 98300 },
-    { name: "Овердрафт", value: 26200 },
+    { name: "Собственные средства", value: 98300, displayValue: "98 300 ₽" },
+    { name: "Овердрафт", value: 26200, displayValue: "26 200 ₽" },
   ];
 
   return (
@@ -129,6 +129,7 @@ const Dashboard = () => {
           title="Структура общего баланса"
           type="bar"
           data={balanceData}
+          customTooltip={(value) => `${value.toLocaleString()} ₽`}
         />
         <ChartCard
           title="Динамика расхода топлива"

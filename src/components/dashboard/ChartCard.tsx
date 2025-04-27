@@ -21,6 +21,7 @@ interface ChartCardProps {
   type: "line" | "bar" | "pie";
   data: any[];
   height?: number;
+  customTooltip?: (value: number) => string;
 }
 
 const ChartCard: React.FC<ChartCardProps> = ({
@@ -28,6 +29,7 @@ const ChartCard: React.FC<ChartCardProps> = ({
   type,
   data,
   height = 300,
+  customTooltip,
 }) => {
   const COLORS = ["#3B55A2", "#FB8607", "#4CAF50", "#F44336", "#CCCCCC"];
 
@@ -56,7 +58,11 @@ const ChartCard: React.FC<ChartCardProps> = ({
             <CartesianGrid strokeDasharray="3 3" stroke="#CCCCCC" />
             <XAxis dataKey="name" stroke="#333333" />
             <YAxis stroke="#333333" />
-            <Tooltip />
+            <Tooltip 
+              formatter={(value: number) => 
+                customTooltip ? customTooltip(value) : value.toLocaleString()
+              }
+            />
             <Legend />
             <Bar dataKey="value" fill="#3B55A2" />
           </BarChart>
@@ -73,13 +79,19 @@ const ChartCard: React.FC<ChartCardProps> = ({
               fill="#8884d8"
               dataKey="value"
               nameKey="name"
-              label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+              label={({ name, percent }) => 
+                `${name}: ${(percent * 100).toFixed(0)}%`
+              }
             >
               {data.map((entry, index) => (
                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
               ))}
             </Pie>
-            <Tooltip />
+            <Tooltip 
+              formatter={(value: number) => 
+                customTooltip ? customTooltip(value) : value.toLocaleString()
+              }
+            />
             <Legend />
           </PieChart>
         );

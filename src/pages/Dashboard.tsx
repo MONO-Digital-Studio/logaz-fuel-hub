@@ -9,13 +9,13 @@ const Dashboard = () => {
   const [activePeriod, setActivePeriod] = useState("month");
 
   const lineData = [
-    { name: "1 Май", value: 240 },
-    { name: "5 Май", value: 300 },
-    { name: "10 Май", value: 200 },
-    { name: "15 Май", value: 450 },
-    { name: "20 Май", value: 280 },
-    { name: "25 Май", value: 350 },
-    { name: "30 Май", value: 420 },
+    { name: "1 Май", value: 10560, displayValue: "10 560 ₽" },
+    { name: "5 Май", value: 13200, displayValue: "13 200 ₽" },
+    { name: "10 Май", value: 8800, displayValue: "8 800 ₽" },
+    { name: "15 Май", value: 19800, displayValue: "19 800 ₽" },
+    { name: "20 Май", value: 12320, displayValue: "12 320 ₽" },
+    { name: "25 Май", value: 15400, displayValue: "15 400 ₽" },
+    { name: "30 Май", value: 18480, displayValue: "18 480 ₽" },
   ];
 
   const fuelData = [
@@ -26,11 +26,11 @@ const Dashboard = () => {
   ];
 
   const topCarsData = [
-    { name: "А123АА", value: 320 },
-    { name: "В456ВВ", value: 280 },
-    { name: "С789СС", value: 250 },
-    { name: "Е012ЕЕ", value: 200 },
-    { name: "Н345НН", value: 180 },
+    { name: "А123АА", value: 14080, displayValue: "14 080 ₽" },
+    { name: "В456ВВ", value: 12320, displayValue: "12 320 ₽" },
+    { name: "С789СС", value: 11000, displayValue: "11 000 ₽" },
+    { name: "Е012ЕЕ", value: 8800, displayValue: "8 800 ₽" },
+    { name: "Н345НН", value: 7920, displayValue: "7 920 ₽" },
   ];
 
   const transactions = [
@@ -135,6 +135,7 @@ const Dashboard = () => {
           title="Динамика расхода топлива"
           type="line"
           data={lineData}
+          customTooltip={(value) => `${value.toLocaleString()} ₽`}
         />
       </div>
 
@@ -148,6 +149,7 @@ const Dashboard = () => {
           title="Топ-5 автомобилей по расходу топлива"
           type="bar"
           data={topCarsData}
+          customTooltip={(value) => `${value.toLocaleString()} ₽`}
         />
       </div>
 

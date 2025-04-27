@@ -9,7 +9,7 @@ const Header: React.FC<HeaderProps> = ({
   userName = "Иванов И.И.",
   companyName = "ООО Транспортные Системы"
 }) => {
-  return <header className="bg-white border-b border-logaz-gray px-6 py-[15px]">
+  return <header className="bg-white border-b border-logaz-gray px-6 py-[19px]">
       <div className="flex items-center justify-between">
         <div className="flex items-center md:hidden">
           <Logo />

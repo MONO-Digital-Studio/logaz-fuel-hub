@@ -33,7 +33,7 @@ const NavItem: React.FC<NavItemProps> = ({
 
 const Sidebar: React.FC = () => {
   const isMobile = useIsMobile();
-  const [collapsed, setCollapsed] = useState(true); // Set default to true for collapsed state
+  const [collapsed, setCollapsed] = useState(true);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   // Handle mobile menu visibility
@@ -76,7 +76,7 @@ const Sidebar: React.FC = () => {
       {overlay}
       
       <div className={sidebarClasses}>
-        <div className="flex items-center p-4 border-b border-logaz-gray py-[20px]">
+        <div className="flex items-center p-4 border-b border-logaz-gray h-[72px]">
           <Logo className="mx-auto" compact={collapsed} />
         </div>
 

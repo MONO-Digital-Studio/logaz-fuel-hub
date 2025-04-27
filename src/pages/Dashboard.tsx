@@ -86,7 +86,7 @@ const Dashboard = () => {
   return (
     <div className="space-y-6 animate-fade-in">
       <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-logaz-dark-gray">Дашборд</h1>
+        <h1 className="text-2xl font-bold text-logaz-dark-gray">Главная</h1>
         <PeriodFilter activePeriod={activePeriod} onPeriodChange={setActivePeriod} />
       </div>
 

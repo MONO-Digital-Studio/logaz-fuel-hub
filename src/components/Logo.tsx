@@ -12,7 +12,7 @@ const Logo: React.FC<LogoProps> = ({ className = '', white = false, compact = fa
     <div className={`flex items-center ${className}`}>
       {compact ? (
         <img 
-          src="/lovable-uploads/3fd178f2-2101-4d2e-b1e2-419eb8850bcc.png" 
+          src="/lovable-uploads/5a827baf-9063-4279-a2fb-72886fe7f7bb.png" 
           alt="ЛОГАЗ SV"
           className="h-8" 
         />

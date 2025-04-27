@@ -1,13 +1,15 @@
+
 import React, { useState } from "react";
 import { Calendar, Download, Printer, Mail, Filter, FileText, BarChart4 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import PeriodFilter from "../components/dashboard/PeriodFilter";
+
 const Reports = () => {
   const [activePeriod, setActivePeriod] = useState("month");
   const [reportType, setReportType] = useState("transactions");
   return <div className="space-y-6 animate-fade-in">
       <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-logaz-dark-gray">Отчетность</h1>
+        <h1 className="text-2xl font-bold text-logaz-dark-gray">Бухгалтерия</h1>
         <div className="flex items-center space-x-2">
           <PeriodFilter activePeriod={activePeriod} onPeriodChange={setActivePeriod} />
         </div>

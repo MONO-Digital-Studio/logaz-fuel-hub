@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import {
@@ -82,7 +81,7 @@ const Sidebar: React.FC = () => {
         <NavItem
           to="/reports"
           icon={<FileText size={20} />}
-          label="Отчетность"
+          label="Бухгалтерия"
           collapsed={collapsed}
         />
         <NavItem

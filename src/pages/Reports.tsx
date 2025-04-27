@@ -1,23 +1,11 @@
-
 import React, { useState } from "react";
-import {
-  Calendar,
-  Download,
-  Printer,
-  Mail,
-  Filter,
-  FileText,
-  BarChart4,
-} from "lucide-react";
+import { Calendar, Download, Printer, Mail, Filter, FileText, BarChart4 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import PeriodFilter from "../components/dashboard/PeriodFilter";
-
 const Reports = () => {
   const [activePeriod, setActivePeriod] = useState("month");
   const [reportType, setReportType] = useState("transactions");
-
-  return (
-    <div className="space-y-6 animate-fade-in">
+  return <div className="space-y-6 animate-fade-in">
       <div className="flex justify-between items-center">
         <h1 className="text-2xl font-bold text-logaz-dark-gray">Отчетность</h1>
         <div className="flex items-center space-x-2">
@@ -32,7 +20,7 @@ const Reports = () => {
             <TabsTrigger value="payments" onClick={() => setReportType("payments")}>Платежи</TabsTrigger>
             <TabsTrigger value="accounts" onClick={() => setReportType("accounts")}>Счета</TabsTrigger>
             <TabsTrigger value="acts" onClick={() => setReportType("acts")}>Акты</TabsTrigger>
-            <TabsTrigger value="accounting" onClick={() => setReportType("accounting")}>Бухгалтерия</TabsTrigger>
+            <TabsTrigger value="accounting" onClick={() => setReportType("accounting")}>Акты сверки</TabsTrigger>
             <TabsTrigger value="analytics" onClick={() => setReportType("analytics")}>Аналитика</TabsTrigger>
           </TabsList>
         </div>
@@ -153,8 +141,6 @@ const Reports = () => {
           </div>
         </TabsContent>
       </Tabs>
-    </div>
-  );
+    </div>;
 };
-
 export default Reports;

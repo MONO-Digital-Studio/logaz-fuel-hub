@@ -25,9 +25,16 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          BASE_URL: /${{ github.event.repository.name }}
+
+      - name: Create 404.html for SPA routing
+        run: cp dist/index.html dist/404.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          cname: hub.logazsv.pro
+

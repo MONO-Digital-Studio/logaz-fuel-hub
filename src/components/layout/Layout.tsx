@@ -6,7 +6,7 @@ import Sidebar from "./Sidebar";
 
 const Layout: React.FC = () => {
   const location = useLocation();
-  const isAuthPage = location.pathname === "/auth";
+  const isAuthPage = location.pathname === "/auth" || location.pathname === "/";
 
   if (isAuthPage) {
     return <Outlet />;

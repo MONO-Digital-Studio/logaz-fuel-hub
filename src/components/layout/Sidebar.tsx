@@ -2,14 +2,12 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Home, CreditCard, FileText, Users, Building2, Bell, HelpCircle, ChevronRight, ChevronLeft, LogOut, List } from "lucide-react";
 import Logo from "../Logo";
-
 interface NavItemProps {
   to: string;
   icon: React.ReactNode;
   label: string;
   collapsed: boolean;
 }
-
 const NavItem: React.FC<NavItemProps> = ({
   to,
   icon,
@@ -23,12 +21,10 @@ const NavItem: React.FC<NavItemProps> = ({
       {!collapsed && <span>{label}</span>}
     </NavLink>;
 };
-
 const Sidebar: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
-
   return <div className={`bg-white border-r border-logaz-gray h-screen flex flex-col ${collapsed ? "w-[76px]" : "w-64"} transition-all duration-300`}>
-      <div className="flex items-center p-4 border-b border-logaz-gray py-[36px]">
+      <div className="flex items-center p-4 border-b border-logaz-gray py-[20px]">
         <Logo className="mx-auto" compact={collapsed} />
       </div>
 
@@ -54,5 +50,4 @@ const Sidebar: React.FC = () => {
       </div>
     </div>;
 };
-
 export default Sidebar;

@@ -14,13 +14,13 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
   return (
     <header className="fixed top-0 right-0 left-0 bg-white border-b border-logaz-gray h-[72px] z-30 shadow-sm">
-      <div className="flex items-center h-full px-6">
+      <div className="flex items-center justify-between h-full px-6">
         <div className="flex items-center md:hidden">
           <Logo />
         </div>
 
-        <div className="flex-grow max-w-2xl ml-4 mr-8 hidden md:block">
-          <div className="relative">
+        <div className="flex-1 flex justify-center">
+          <div className="relative w-full max-w-xs">
             <input 
               type="text" 
               placeholder="Поиск..." 
@@ -33,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({
           </div>
         </div>
 
-        <div className="flex items-center gap-2 ml-auto">
+        <div className="flex items-center gap-2">
           <button className="relative p-2 text-logaz-dark-gray hover:bg-logaz-light-gray rounded-full">
             <Bell size={20} />
             <span className="absolute top-1 right-1 w-2 h-2 bg-logaz-red rounded-full"></span>

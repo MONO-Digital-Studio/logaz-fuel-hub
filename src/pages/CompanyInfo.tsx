@@ -1,7 +1,5 @@
-
 import React from "react";
 import { Building2, MapPin, Phone, Mail } from "lucide-react";
-
 const CompanyInfo = () => {
   // Примерные данные компании
   const companyData = {
@@ -13,23 +11,26 @@ const CompanyInfo = () => {
       number: "TS-2023/12",
       date: "01.01.2023",
       overdraftLimit: "50 000 ₽",
-      paymentDelay: "30 дней",
+      paymentDelay: "30 дней"
     },
     contacts: {
       phone: "+7 (495) 123-45-67",
       email: "info@example.ru",
       manager: "Сергеев Сергей Сергеевич",
-      managerPhone: "+7 (495) 123-45-68",
+      managerPhone: "+7 (495) 123-45-68"
     },
-    fuelPrices: [
-      { type: "Метан", price: "20.50 ₽/куб.м", date: "25.05.2023" },
-      { type: "Пропан", price: "25.75 ₽/л", date: "25.05.2023" },
-    ],
+    fuelPrices: [{
+      type: "Метан",
+      price: "20.50 ₽/куб.м",
+      date: "25.05.2023"
+    }, {
+      type: "Пропан",
+      price: "25.75 ₽/л",
+      date: "25.05.2023"
+    }]
   };
-
-  return (
-    <div className="space-y-6 animate-fade-in">
-      <h1 className="text-2xl font-bold text-logaz-dark-gray">Информация о компании</h1>
+  return <div className="space-y-6 animate-fade-in">
+      <h1 className="text-2xl font-bold text-logaz-dark-gray">Компания</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="card card-header">
@@ -135,8 +136,7 @@ const CompanyInfo = () => {
           </div>
 
           <div className="space-y-4">
-            {companyData.fuelPrices.map((fuel, index) => (
-              <div key={index} className="flex justify-between items-center p-3 bg-logaz-light-gray rounded-md">
+            {companyData.fuelPrices.map((fuel, index) => <div key={index} className="flex justify-between items-center p-3 bg-logaz-light-gray rounded-md">
                 <div>
                   <p className="font-medium">{fuel.type}</p>
                   <p className="text-xs text-logaz-gray">
@@ -146,13 +146,10 @@ const CompanyInfo = () => {
                 <p className="text-lg font-semibold text-logaz-blue">
                   {fuel.price}
                 </p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default CompanyInfo;

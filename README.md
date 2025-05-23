@@ -1,73 +1,86 @@
-# Welcome to your Lovable project
 
-## Project info
+# Информационная система ЛОГАЗ SV
 
-**URL**: https://lovable.dev/projects/5a42576c-af93-4a8c-b78f-e33425ee2425
+## О проекте
 
-## How can I edit this code?
+**ЛОГАЗ SV** — современная информационная система для управления топливными картами и транзакциями, предназначенная для транспортных компаний и корпоративных клиентов. Система позволяет эффективно контролировать топливные расходы, управлять картами и анализировать данные в режиме реального времени.
 
-There are several ways of editing your application.
+### Основные возможности
+- Управление топливными картами компании
+- Мониторинг транзакций и расходов в режиме реального времени
+- Аналитика и отчетность по различным параметрам
+- Контроль баланса и операции пополнения счета
+- Управление пользователями и распределение доступов
 
-**Use Lovable**
+## Технический стек
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/5a42576c-af93-4a8c-b78f-e33425ee2425) and start prompting.
+Проект построен с использованием современных технологий:
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend**: React, TypeScript, Vite
+- **UI/UX**: Tailwind CSS, shadcn/ui
+- **Управление состоянием**: React Query
+- **Маршрутизация**: React Router
+- **Визуализация данных**: Recharts
+- **Интерактивные элементы**: Lucide React (иконки)
 
-**Use your preferred IDE**
+## Запуск проекта
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Требования
+- Node.js 20.x
+- npm 10.x
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Локальная разработка
 
-Follow these steps:
+1. **Клонирование репозитория**
+   ```bash
+   git clone <URL_РЕПОЗИТОРИЯ>
+   cd logaz-sv
+   ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+2. **Установка зависимостей**
+   ```bash
+   npm install
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+3. **Запуск сервера разработки**
+   ```bash
+   npm run dev
+   ```
+   Приложение будет доступно по адресу [http://localhost:5173](http://localhost:5173)
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Сборка для продакшена
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```bash
+npm run build
 ```
 
-**Edit a file directly in GitHub**
+Оптимизированные файлы будут созданы в директории `dist/`.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Структура проекта
 
-**Use GitHub Codespaces**
+```
+src/
+├── components/         # UI компоненты
+│   ├── dashboard/      # Компоненты дашборда
+│   ├── layout/         # Компоненты разметки
+│   ├── payment/        # Компоненты для платежей
+│   ├── transactions/   # Компоненты для транзакций
+│   └── ui/             # Базовые UI компоненты
+├── hooks/              # Кастомные React хуки
+├── lib/                # Вспомогательные функции
+├── pages/              # Страницы приложения
+├── App.tsx             # Корневой компонент
+└── main.tsx            # Точка входа
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Деплой
 
-## What technologies are used for this project?
+Проект настроен для автоматического развертывания с использованием GitHub Actions. При пуше в ветку `main` происходит автоматическое развертывание на GitHub Pages.
 
-This project is built with:
+### Домен
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Сайт доступен по адресу: [hub.logazsv.pro](https://hub.logazsv.pro)
 
-## How can I deploy this project?
+## Лицензия
 
-Simply open [Lovable](https://lovable.dev/projects/5a42576c-af93-4a8c-b78f-e33425ee2425) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+© 2025 ЛОГАЗ SV. Все права защищены.

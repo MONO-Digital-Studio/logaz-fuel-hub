@@ -2,6 +2,8 @@
 import React from "react";
 import { Bell, User, Search, LogOut } from "lucide-react";
 import Logo from "../Logo";
+import { useApp } from "@/context/AppContext";
+import { useNavigate } from "react-router-dom";
 
 interface HeaderProps {
   userName?: string;
@@ -12,6 +14,17 @@ const Header: React.FC<HeaderProps> = ({
   userName = "Иванов И.И.",
   companyName = "ООО Транспортные Системы"
 }) => {
+  const { logout, user } = useApp();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/auth");
+  };
+
+  // Используем имя пользователя из контекста, если оно доступно
+  const displayName = user?.name || userName;
+
   return (
     <header className="fixed top-0 right-0 left-0 bg-white border-b border-logaz-gray h-[72px] z-30 shadow-sm">
       <div className="flex items-center justify-between h-full px-6">
@@ -41,7 +54,7 @@ const Header: React.FC<HeaderProps> = ({
 
           <div className="flex items-center gap-4">
             <div className="hidden md:block text-right">
-              <p className="text-sm font-medium text-logaz-dark-gray">{userName}</p>
+              <p className="text-sm font-medium text-logaz-dark-gray">{displayName}</p>
               <p className="text-xs text-logaz-gray">{companyName}</p>
             </div>
 
@@ -50,7 +63,10 @@ const Header: React.FC<HeaderProps> = ({
             </button>
           </div>
 
-          <button className="p-2 text-logaz-dark-gray hover:bg-logaz-light-gray rounded-full">
+          <button 
+            className="p-2 text-logaz-dark-gray hover:bg-logaz-light-gray rounded-full"
+            onClick={handleLogout}
+          >
             <LogOut size={20} />
           </button>
         </div>
